@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="banner">
+    <div class="banner-contents">
+        <form method="GET" action="/pazarview/search">
+                <div class="search-bar">
+                    <input type="text" name="queryParameter" placeholder="Find what you're looking for" />
+                </div>
+
+                <input type="submit" value="Search" class="btn btn-primary btn-lg search-btn" />
+        </form>
+    </div>
+</div>

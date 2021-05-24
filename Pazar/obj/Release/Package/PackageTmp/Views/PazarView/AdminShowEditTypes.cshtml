@@ -1,0 +1,58 @@
+﻿@model Pazar.Models.Viewmodels.AdCrudModel
+
+@{
+    ViewBag.Title = "Browse";
+}
+
+<h2>View and Edit Available Listing Types</h2>
+
+<p class="text-danger">This area is restricted to administrators only.</p>
+
+<p>Changes to the listing types can be made here.</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Type ID
+        </th>
+        <th>
+            Type Name
+        </th>
+        <th>
+            Delete Option
+        </th>
+    </tr>
+
+    @foreach (var item in Model.allTypes)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeId)
+            </td>
+            <td>
+                <form action="/PazarView/AdminEditTypes" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="TypeId" value="@item.TypeId" />
+                    <input type="text" name="Type" value="@item.Type" />
+                    <input type="submit" value="Confirm Change" />
+                </form>
+            </td>
+            <td>
+                <form action="/PazarView/AdminDeleteTypes" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="TypeId" value="@item.TypeId" />
+                    <input type="submit" value="Delete Type" />
+                </form>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back To Dashboard", "Index", "Manage")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

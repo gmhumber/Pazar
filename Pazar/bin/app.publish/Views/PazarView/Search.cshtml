@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Pazar.Models.AdDTO>
+
+@{
+    ViewBag.Title = "Search Results";
+}
+
+<h2>Search Results</h2>
+
+@if (!Model.Any())
+{
+    <p>Sorry, your search didn't yield any results.</p>
+}
+
+else
+
+{
+
+    <div class="listings-grid-container">
+
+        @foreach (var item in Model)
+        {
+            <div class="listings-grid-item">
+                <h2>@item.Title</h2>
+                <p>@item.Type</p>
+                <p>$@item.Price</p>
+                @Html.ActionLink("Details", "Details", new { id = item.AdId })
+            </div>
+        }
+
+    </div>
+
+}

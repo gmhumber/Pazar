@@ -1,0 +1,87 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.banner {
+    width: 100%;
+    height: 95vh;
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url("/images/market_s.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-contents {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 500px;
+}
+
+.search-bar input {
+    font-size: 1.5em;
+    padding: .75rem;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: white;
+    max-width: 80%;
+    width: 75%;
+    box-shadow: 1px 1px 3px 1px black;
+}
+
+.search-bar input::placeholder {
+    text-align: center;
+}
+
+.search-btn {
+    margin: 2rem;
+    box-shadow: 1px 1px 3px 1px black;
+}
+
+.listings-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-auto-rows: 1fr;
+    grid-gap: 2rem;
+    justify-content: space-evenly;
+}
+
+.listings-grid-item {
+    border: 1px solid #e95420;
+    border-radius: 10px;
+    padding: 5% 10%;
+    box-shadow: 1px 1px 3px 1px #e95420;
+}
+
+.listings-grid-item h2 {
+    margin-top: 0;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
